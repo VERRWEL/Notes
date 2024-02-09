@@ -1,11 +1,11 @@
 # Todo
 
 1. lagu papa
-    - [ ] [kita so janji pa tuhan](https://youtu.be/bt-k56XaAqY?si=VMChxnE7Yok3SWj7) 
-    - [ ] [sampai kapan](https://youtu.be/slXqodxm6Jg?si=nIZBSvLcjKdd9jAQ)
-    - [ ] [MAMA](https://youtu.be/hMzALn_Q54c?si=phZXNwxBwBvdbJkr)
+    - [x] [kita so janji pa tuhan](https://youtu.be/bt-k56XaAqY?si=VMChxnE7Yok3SWj7) 
+    - [x] [sampai kapan](https://youtu.be/slXqodxm6Jg?si=nIZBSvLcjKdd9jAQ)
+    - [x] [MAMA](https://youtu.be/hMzALn_Q54c?si=phZXNwxBwBvdbJkr)
     
-2. rate youtube adblock
+2. rate youtube adblock 
 3. ambe paket mama
 4. count ur economy
     - check pengeluaran tgl 9 feb
