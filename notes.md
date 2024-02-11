@@ -6,8 +6,8 @@
     - [x] [MAMA](https://youtu.be/hMzALn_Q54c?si=phZXNwxBwBvdbJkr)
     
 2. ~~rate youtube adblock~~
-3. ambe paket mama
-4. count ur economy
+3. ~~ambe paket mama~~
+4. ~~count ur economy~~
     - check pengeluaran tgl 9 feb
     - hitung keperluan pengeluaran nanti
         - untuk keluar ke UPH
@@ -27,3 +27,4 @@
     - print tester warna [print this](https://printertesting.com/wp-content/uploads/2020/11/print-test-page-color.jpg)
 6. learn either java or bash
 7. beli cukur rambut elektrik papa
+8. ingatkan di grup kel untuk kaka ganti no unit
