@@ -1,10 +1,17 @@
 #TODO
 
 1. ~~lagu papa~~
-    - [x] [kita so janji pa tuhan](https://youtu.be/bt-k56XaAqY?si=VMChxnE7Yok3SWj7) 
-    - [x] [sampai kapan](https://youtu.be/slXqodxm6Jg?si=nIZBSvLcjKdd9jAQ)
-    - [x] [MAMA](https://youtu.be/hMzALn_Q54c?si=phZXNwxBwBvdbJkr)
-    
+    - [ ] [Kekasih](https://youtu.be/XrqiM-urPLE?si=mETutGYr1wMxnGKL)
+    - [ ] [tak ingin sendiri](https://youtu.be/2PFFCHHoD5A?si=lFMFIqgLPIzrudVR)
+    - [ ] [kita pe nasib](https://youtu.be/gBoPdZjnP5U?si=Qk-PwhdguF62HBwF)
+    - [ ] [jangan di tanya](https://youtu.be/R8F5b0EaYr8?si=COHifn8i0lxOHnH5)
+    - [ ] [mungkinkah](https://youtu.be/bCqsI_qtprY?si=7cYD2LBV5Y3chL3r)
+    - [ ] [bunyikan suara hati](https://youtu.be/lN1YhpvROVg?si=lBgOQhEjQd-_gjx1)
+    - [ ] [gubahanku](https://youtu.be/uXN8wjp5Fek?si=YGg0z7SsgJwhXIqH)
+    - [ ] [aku jatuh](https://youtu.be/WpuH3pSymAY?si=hQ069dgaasD6pxhm)
+    - [ ] [aku begini](https://youtu.be/WpuH3pSymAY?si=hQ069dgaasD6pxhm)
+    - [ ] [juwita](https://youtu.be/7v0KChDftqU?si=mBzOIeohbUZMs6vv)
+
 2. ~~rate youtube adblock~~
 3. ~~ambe paket mama~~
 4. ~~count ur economy~~
