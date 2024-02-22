@@ -1,10 +1,10 @@
 #TODO
 
 1. ~~lagu papa~~
-    - [ ] [Kekasih](https://youtu.be/XrqiM-urPLE?si=mETutGYr1wMxnGKL)
-    - [ ] [tak ingin sendiri](https://youtu.be/2PFFCHHoD5A?si=lFMFIqgLPIzrudVR)
-    - [ ] [kita pe nasib](https://youtu.be/gBoPdZjnP5U?si=Qk-PwhdguF62HBwF)
-    - [ ] [jangan di tanya](https://youtu.be/R8F5b0EaYr8?si=COHifn8i0lxOHnH5)
+    - [x] [Kekasih](https://youtu.be/XrqiM-urPLE?si=mETutGYr1wMxnGKL)
+    - [x] [tak ingin sendiri](https://youtu.be/2PFFCHHoD5A?si=lFMFIqgLPIzrudVR)
+    - [x] [kita pe nasib](https://youtu.be/gBoPdZjnP5U?si=Qk-PwhdguF62HBwF)
+    - [x] [jangan di tanya](https://youtu.be/R8F5b0EaYr8?si=COHifn8i0lxOHnH5)
     - [ ] [mungkinkah](https://youtu.be/bCqsI_qtprY?si=7cYD2LBV5Y3chL3r)
     - [ ] [bunyikan suara hati](https://youtu.be/lN1YhpvROVg?si=lBgOQhEjQd-_gjx1)
     - [ ] [gubahanku](https://youtu.be/uXN8wjp5Fek?si=YGg0z7SsgJwhXIqH)
