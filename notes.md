@@ -18,7 +18,7 @@
     - check pengeluaran tgl 9 feb
     - hitung keperluan pengeluaran nanti
         - untuk keluar ke UPH
-        - untuk ke rumah stella
+        - untuk ke rumah stellaclarii
         - beli sabun cuci baju
     ```
     pengeluaran 9 feb = 193.000
