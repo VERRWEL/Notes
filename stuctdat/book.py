@@ -1,6 +1,7 @@
 
 
 class book:
+    
     def detail(self):
         self.title = input("judul buku: ")
         self.name = input("pengarang buku: ")
