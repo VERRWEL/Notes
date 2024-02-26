@@ -1,10 +1,10 @@
 # Latihan soal struktur data
 """
 membuat program yang dapat menyimpan dan menampilkan judul, nama pengarang, dan tahun terbit sebuah atau banyak
-buku sekaligus. menggunakan class bernama book() dengan methods berupa detail() yang bertugas untuk menerima dan 
-menyimpan data judul buku, pengarang buku, dan tahun terbit buku. method addbook() yang bertugas untuk meenambahkan
-detail buku selama user masih ingin menambahkan buku. dan method terakhir yang bernama display() yang bertugas
-untuk menampilkan data detail buku dengan rapih
+buku sekaligus. menggunakan class bernama book() dengan methods sebagai beriktut:
+- detail() yang bertugas untuk menerima dan menyimpan data judul buku, pengarang buku, dan tahun terbit buku. 
+- addbook() yang bertugas untuk meenambahkan detail buku selama user masih ingin menambahkan buku. 
+- display() yang bertugas untuk menampilkan data detail buku dengan rapih
 """
 
 class book:
