@@ -1,3 +1,4 @@
+# Codingan Wungow
 """
 membuat program sewa kendaraan yang mempunyai methods:
 - TotalSewa() yaitu LamaSewa*BiayaSewa
