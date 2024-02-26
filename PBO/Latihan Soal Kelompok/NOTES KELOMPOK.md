@@ -1,6 +1,6 @@
 **Anggota kelompok**:
 - Gus
-- Wungow
-- Nathan
+- wungow
+- nathan
 - Justin
 - Cello
