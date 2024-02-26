@@ -1,4 +1,4 @@
-# TUGAS MANDIRI #1 | Monday, feb 26 2024(due date)
+# TUGAS MANDIRI #1 | (due date)Monday, feb 26 2024
 
 ## Method in Java and Python 
 Buatlah program Java untuk menghitung gaji pegawai, dengan detail
