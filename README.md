@@ -8,4 +8,5 @@ hasil codingan dapat digunakan seperlunya entah untuk mempelajari lagi sebuah al
 jika ada sebuah error pada suatu file, feel free jika mau membantu mengedit dan memperbaiki codenya.
 jika juga mau membantu menambahkan file codingan baru seperti tugas atau latihan soal yang belum ada di repository ini, bisa juga langsung menambahkan.
 
-semoga membantu & happy coding
+**SEMOGA MEMBANTU & HAPPY CODING**
+~pls no trolling btw
