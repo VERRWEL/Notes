@@ -1,4 +1,5 @@
-package ifelif;
+package pegawai;
+
 
 public class Pegawai {
     private int nik;
