@@ -1,13 +1,13 @@
 
-package ifelif;
+package pegawai;
 
 import javax.swing.JOptionPane;
-public class Ifelif {
+public class mainpegawai {
     public static void main(String[] args) {
-    String nik=  JOptionPane.showInputDialog(null, "Masukan Nik Anda!");
-      String namaPegawai = JOptionPane.showInputDialog(null,"masukan Nama pegawai");
-      String gajiPegawai = JOptionPane.showInputDialog(null,"Gaji Pegawai?");
-      Pegawai pegawai1 = new Pegawai(Integer.parseInt(nik), namaPegawai,Double.parseDouble(gajiPegawai));
+        String nik=  JOptionPane.showInputDialog(null, "Masukan Nik Anda!");
+        String namaPegawai = JOptionPane.showInputDialog(null,"masukan Nama pegawai");
+        String gajiPegawai = JOptionPane.showInputDialog(null,"Gaji Pegawai?");
+        Pegawai pegawai1 = new Pegawai(Integer.parseInt(nik), namaPegawai,Double.parseDouble(gajiPegawai));
         
         
         // Menampilkan detail pegawai dan total gaji
