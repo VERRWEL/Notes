@@ -2,9 +2,9 @@
 Buat program untuk
 menghitung grade nilai. Bobot
 uts adalah 30%, tugas 20%, uas
-50%. Untuk totalnilai =
-uts+tugas+uas. Grade: jika
-totalnilai >= 80 maka "A", 
+50%. Untuk totalnilai = uts+tugas+uas. 
+Grade: 
+jika totalnilai >= 80 maka "A", 
 jika totalnilai >= 60 maka "B", 
 jika totalnilai >= 40 maka "C", 
 jika totalnilai >= 20 maka "D", 
