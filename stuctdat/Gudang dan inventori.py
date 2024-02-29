@@ -65,11 +65,11 @@ class Gudzz:
                 print(key, ":", value)
             
             manual = str(input("barang mana yang mau di edit? "))
-            try:
-                edit = str(input(f"berapa banyak unit {manual} yang ingin dikurangi : "))
+            if manual in self.barang:
+                edit = int(input(f"berapa banyak unit {manual} yang ingin dikurangi, sekarang ada {self.barang[manual]} : "))
                 self.barang[manual] = self.barang[manual] - edit
-                print("berhasil mengurangi ")
-            except:
+                print(f"{manual} berhasil dikurangi menjadi {self.barang[manual]}")
+            else:
                 print("barang yang dicari tidak ditemukan \nNote: nama barang harus case sensitive")
             x.opsi()
             
@@ -86,15 +86,20 @@ class Gudzz:
         
     def opsi(self):
         opp = int(input("1. lihat barang \n2. tambah barang \n3. hapus barang \n4. keluar \npilih opsi 1-4 diatas ini : "))
-        while opp != 4:
+        while True:
             if opp == 1:
                 x.lihat_barang()
             elif opp == 2:
                 x.tambah_barang()
             elif opp == 3:
                 x.hapus_barang()
+            elif opp == 4:
+                print("otw exit program")
+                break
             else:
-                print("error")
+                print()
+                print(f"error! pilihan anda ({opp}) tidak tersedia")
+                break
 
 x=Gudzz(barang)
 x.opsi()
