@@ -4,14 +4,7 @@ dengan jumlahnya. Terdapat method untuk menambahkan item ke inventaris, menghapu
 dari inventaris, dan menampilkan semua barang yang ada di inventaris. Program menggunakan
 loop while untuk menampilkan menu kepada pengguna dan mengambil inputnya. Penggunaan
 match-case / if -elif-else digunakan untuk memilih operasi yang sesuai dengan input pengguna.
-
-2. Buatlah sebuah class bernama Restaurant yang memiliki atribut nama restoran, daftar menu
-beserta harga, dan rating. Class ini harus memiliki method untuk menambahkan menu baru
-beserta harganya, menghapus menu dari daftar, dan menampilkan daftar menu beserta harga
-dan ratingnya. Program menggunakan loop while untuk menampilkan menu kepada pengguna
-dan mengambil inputnya. Penggunaan match-case / if -elif-else digunakan untuk memilih
-operasi yang sesuai dengan input pengguna. Menu program terdiri dari menambah menu baru,
-menampilkan daftar menu, menghapus daftar menu."""
+"""
 
 barang = {
     "muffler" : 3,
