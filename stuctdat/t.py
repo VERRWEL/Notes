@@ -53,7 +53,6 @@ class Restaurant:
                 print("pilihan tidak tersedia")
                 act = str(input("silahkan pilih 1-4 : "))
 
-
 menu = {
     "nasi uduk" : 5000,
     "tempe goreng" : 3000,
