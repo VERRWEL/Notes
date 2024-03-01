@@ -13,18 +13,29 @@ class Restaurant:
     def tampil(self):
         for key, value in menu.items():
             print(f"{key} : Rp {value:,}")
+        r.action()
 
     def tambah(self):
-        pass
+        add = str(input("nama menu barunya apa? "))
+        harga = int(input(f"masukkan harga {add} : "))
+        self.menu[add] = harga
+        r.action()
 
     def hapus(self):
-        pass
+        print()
+        dell = str(input("menu apa yang ingin dihapus?"))
+        if dell in self.menu:
+            del self.menu[dell]
+        else:
+            print(f"{dell} tidak ada di menu")   
+        r.action()
 
     def action(self):
         print("1. tampil menu")
         print("2. tambah menu")
         print("3. hapus menu")
-        act = str(input("silahkan pilih 1-3 : "))
+        print("4. exit")
+        act = str(input("silahkan pilih 1-4 : "))
         while True:
             if act == "1":
                 r.tampil()
@@ -35,9 +46,12 @@ class Restaurant:
             elif act == "3":
                 r.hapus()
                 break
+            elif act == "4":
+                print("selesai")
+                break
             else:
                 print("pilihan tidak tersedia")
-                act = str(input("silahkan pilih 1-3 : "))
+                act = str(input("silahkan pilih 1-4 : "))
 
 
 menu = {
@@ -47,4 +61,4 @@ menu = {
 }
 
 r = Restaurant(menu)
-r.action
+r.action()
