@@ -14,14 +14,26 @@ barang = {
     "ECU" : 10
 }
 
+
 class Gudzz:
     def __init__(self, barang):
         self.barang = barang
+        if len(self.barang) == 1:
+            self.disp = list(self.barang)[0]
+        if len(self.barang) >= 2:
+            self.disp = list(self.barang)[-1]
 
     def tambah_barang(self):
         self.tambah = str(input("masukkan nama barang : "))
-        self.jumblah = int(input(f"berapa jumblah barang {self.tambah} : "))
-        self.barang[self.tambah] = self.jumblah
+        
+
+        if self.tambah in self.barang:
+            self.jumblah = int(input(f"berapa banyak {self.tambah} yang ingin ditambahkan : "))
+            self.barang[self.tambah] = self.barang[self.tambah] + self.jumblah
+        
+        if self.tambah not in self.barang:
+            self.jumblah = int(input(f"berapa jumblah barang {self.tambah} : "))
+            self.barang[self.tambah] = self.jumblah
 
         for key, value in self.barang.items():
             print(key, ":", value)
@@ -39,26 +51,23 @@ class Gudzz:
         if len(self.barang) == 0:
             print("\nisi gudang sudah kosong dan tidak ada lagi yang bisa dihapus")
             x.opsi()
-        elif len(self.barang) == 1:
-            disp = list(self.barang)[0]
-        else:
-            disp = list(self.barang)[-1]
-
         
-        hapus = int(input(f"\n1. hapus semua barang \n2. edit barang terakhir ({disp}) \n3. pilih manual \n4. Batal\nsilahkan pilih opsi 1-4 dari atas  : "))
+        hapus = int(input(f"\n1. hapus semua barang \n2. edit barang terakhir ({self.disp}) \n3. pilih manual \n4. Batal\nsilahkan pilih opsi 1-4 dari atas  : "))
         if hapus == 1:
             self.barang.clear()
+            print()
+            x.opsi()
         if hapus == 2:
             hapus2 = int(input("\n1. hapus semua \n2. edit manual \n1/2? "))
             if hapus2 == 1: 
-                del self.barang[disp]
+                del self.barang[self.disp]
+                x.opsi()
             elif hapus2 == 2:
-                hasil_hapus2 = int(input(f"berapa ({disp}) yang ingin dikurangi, sekarang ada {self.barang[disp]} : "))
-                hasil_hapus3 = self.barang[disp] - hasil_hapus2
-                self.barang[disp] = hasil_hapus3
-                print(f"berhasil mengurangi {disp} dari {self.barang[disp] + hasil_hapus2} ke {self.barang[disp]} ")
-                if self.barang[disp] == 0:
-                    del self.barang[disp]
+                hasil_hapus2 = int(input(f"berapa ({self.disp}) yang ingin dikurangi, sekarang ada {self.barang[self.disp]} : "))
+                hasil_hapus3 = self.barang[self.disp] - hasil_hapus2
+                self.barang[self.disp] = hasil_hapus3
+                print(f"berhasil mengurangi {self.disp} dari {self.barang[self.disp] + hasil_hapus2} ke {self.barang[self.disp]} ")
+                x.opsi()
 
         if hapus == 3:
             for key, value in self.barang.items():
@@ -72,13 +81,20 @@ class Gudzz:
             else:
                 print("barang yang dicari tidak ditemukan \nNote: nama barang harus case sensitive")
             x.opsi()
-            
+        
         if hapus == 4:
             print()
+            print("kembalikan ke menu pilihan")
             x.opsi()
+
+        for i in self.barang.keys():
+            if self.barang[i] < 1:
+                del self.barang[i]
 
     def lihat_barang(self):
         print()
+        if len(self.barang) == 0:
+            print("\nisi gudang sudah kosong dan tidak ada lagi yang bisa dihapus")
         for key, value in self.barang.items():
             print(key, ":", value)
         print()
@@ -89,10 +105,13 @@ class Gudzz:
         while True:
             if opp == 1:
                 x.lihat_barang()
+                break
             elif opp == 2:
                 x.tambah_barang()
+                break
             elif opp == 3:
                 x.hapus_barang()
+                break
             elif opp == 4:
                 print("otw exit program")
                 break
