@@ -23,6 +23,8 @@ class Gudzz:
         if len(self.barang) >= 2:
             self.disp = list(self.barang)[-1]
 
+        
+
     def tambah_barang(self):
         self.tambah = str(input("masukkan nama barang : "))
         
@@ -48,6 +50,7 @@ class Gudzz:
             print("pilihan anda \"", again, "\" aneh")
 
     def hapus_barang(self):
+                
         if len(self.barang) == 0:
             print("\nisi gudang sudah kosong dan tidak ada lagi yang bisa dihapus")
             x.opsi()
@@ -64,9 +67,14 @@ class Gudzz:
                 x.opsi()
             elif hapus2 == 2:
                 hasil_hapus2 = int(input(f"berapa ({self.disp}) yang ingin dikurangi, sekarang ada {self.barang[self.disp]} : "))
-                hasil_hapus3 = self.barang[self.disp] - hasil_hapus2
-                self.barang[self.disp] = hasil_hapus3
-                print(f"berhasil mengurangi {self.disp} dari {self.barang[self.disp] + hasil_hapus2} ke {self.barang[self.disp]} ")
+                if hasil_hapus2 == self.barang[self.disp]:
+                    del self.barang[self.disp]
+                    print(f"berhasil menghapus seluruh item {self.disp}")
+                else:
+                    hasil_hapus3 = self.barang[self.disp] - hasil_hapus2
+                    self.barang[self.disp] = hasil_hapus3
+                    print(f"berhasil mengurangi {self.disp} dari {self.barang[self.disp] + hasil_hapus2} ke {self.barang[self.disp]} ")
+                
                 x.opsi()
 
         if hapus == 3:
@@ -87,10 +95,6 @@ class Gudzz:
             print("kembalikan ke menu pilihan")
             x.opsi()
 
-        for i in self.barang.keys():
-            if self.barang[i] < 1:
-                del self.barang[i]
-
     def lihat_barang(self):
         print()
         if len(self.barang) == 0:
@@ -101,18 +105,18 @@ class Gudzz:
         x.opsi()
         
     def opsi(self):
-        opp = int(input("1. lihat barang \n2. tambah barang \n3. hapus barang \n4. keluar \npilih opsi 1-4 diatas ini : "))
+        opp = str(input("1. lihat barang \n2. tambah barang \n3. hapus barang \n4. keluar \npilih opsi 1-4 diatas ini : "))
         while True:
-            if opp == 1:
+            if opp == "1":
                 x.lihat_barang()
                 break
-            elif opp == 2:
+            elif opp == "2":
                 x.tambah_barang()
                 break
-            elif opp == 3:
+            elif opp == "3":
                 x.hapus_barang()
                 break
-            elif opp == 4:
+            elif opp == "4":
                 print("otw exit program")
                 break
             else:

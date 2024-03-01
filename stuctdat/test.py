@@ -1,14 +1,18 @@
-Ge = {
+my_dict = {
     "AB" : 1,
     "CD" : 2,
-    "EF" : 0,
+    "EF" : 4,
     "GH" : 4
 }
 
 
-for i in Ge.keys():
-    if Ge[i] < 1:
-        del Ge[i]
 
-for key, value in Ge.items():
-    print(key, ":", value)
+
+
+for key, value in my_dict.items():
+    if value == 0:
+      x = key
+
+
+
+print(my_dict["AB"])
