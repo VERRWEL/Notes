@@ -18,10 +18,7 @@ barang = {
 class Gudzz:
     def __init__(self, barang):
         self.barang = barang
-        if len(self.barang) == 1:
-            self.disp = list(self.barang)[0]
-        if len(self.barang) >= 2:
-            self.disp = list(self.barang)[-1]
+        
 
     def tambah_barang(self):
         self.tambah = str(input("masukkan nama barang : "))
@@ -48,7 +45,11 @@ class Gudzz:
             print("pilihan anda \"", again, "\" aneh")
 
     def hapus_barang(self):
-                
+        if len(self.barang) == 1:
+            self.disp = list(self.barang)[0]
+        if len(self.barang) >= 2:
+            self.disp = list(self.barang)[-1]
+            
         if len(self.barang) == 0:
             print("\nisi gudang sudah kosong dan tidak ada lagi yang bisa dihapus")
             x.opsi()
@@ -79,14 +80,19 @@ class Gudzz:
                 x.opsi()
 
         if hapus == 3:
+            print()
             for key, value in self.barang.items():
                 print(key, ":", value)
             
             manual = str(input("barang mana yang mau di edit? "))
             if manual in self.barang:
                 edit = int(input(f"berapa banyak unit {manual} yang ingin dikurangi, sekarang ada {self.barang[manual]} : "))
-                self.barang[manual] = self.barang[manual] - edit
-                print(f"{manual} berhasil dikurangi menjadi {self.barang[manual]}")
+                if edit >= self.barang[self.disp]:
+                    del self.barang[self.disp]
+                    print(f"berhasil menghapus seluruh item {self.disp}")
+                else:
+                    self.barang[manual] = self.barang[manual] - edit
+                    print(f"{manual} berhasil dikurangi menjadi {self.barang[manual]}")
             else:
                 print("barang yang dicari tidak ditemukan \nNote: nama barang harus case sensitive")
             x.opsi()
