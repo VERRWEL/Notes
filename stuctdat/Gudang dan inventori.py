@@ -49,7 +49,7 @@ class Gudzz:
             self.disp = list(self.barang)[0]
         if len(self.barang) >= 2:
             self.disp = list(self.barang)[-1]
-            
+
         if len(self.barang) == 0:
             print("\nisi gudang sudah kosong dan tidak ada lagi yang bisa dihapus")
             x.opsi()
@@ -87,9 +87,9 @@ class Gudzz:
             manual = str(input("barang mana yang mau di edit? "))
             if manual in self.barang:
                 edit = int(input(f"berapa banyak unit {manual} yang ingin dikurangi, sekarang ada {self.barang[manual]} : "))
-                if edit >= self.barang[self.disp]:
-                    del self.barang[self.disp]
-                    print(f"berhasil menghapus seluruh item {self.disp}")
+                if edit >= self.barang[manual]:
+                    del self.barang[manual]
+                    print(f"berhasil menghapus seluruh item {manual}")
                 else:
                     self.barang[manual] = self.barang[manual] - edit
                     print(f"{manual} berhasil dikurangi menjadi {self.barang[manual]}")
@@ -129,7 +129,7 @@ class Gudzz:
             else:
                 print()
                 print(f"error! pilihan anda ({opp}) tidak tersedia")
-                break
+                opp = str(input("1. lihat barang \n2. tambah barang \n3. hapus barang \n4. keluar \npilih opsi 1-4 diatas ini : "))
 
 x=Gudzz(barang)
 x.opsi()
