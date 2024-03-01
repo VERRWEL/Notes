@@ -23,8 +23,6 @@ class Gudzz:
         if len(self.barang) >= 2:
             self.disp = list(self.barang)[-1]
 
-        
-
     def tambah_barang(self):
         self.tambah = str(input("masukkan nama barang : "))
         
@@ -64,10 +62,12 @@ class Gudzz:
             hapus2 = int(input("\n1. hapus semua \n2. edit manual \n1/2? "))
             if hapus2 == 1: 
                 del self.barang[self.disp]
+                print()
                 x.opsi()
             elif hapus2 == 2:
+                print()
                 hasil_hapus2 = int(input(f"berapa ({self.disp}) yang ingin dikurangi, sekarang ada {self.barang[self.disp]} : "))
-                if hasil_hapus2 == self.barang[self.disp]:
+                if hasil_hapus2 > self.barang[self.disp]:
                     del self.barang[self.disp]
                     print(f"berhasil menghapus seluruh item {self.disp}")
                 else:
