@@ -4,7 +4,7 @@ beserta harganya, menghapus menu dari daftar, dan menampilkan daftar menu besert
 dan ratingnya. Program menggunakan loop while untuk menampilkan menu kepada pengguna
 dan mengambil inputnya. Penggunaan match-case / if -elif-else digunakan untuk memilih
 operasi yang sesuai dengan input pengguna. Menu program terdiri dari menambah menu baru,
-menampilkan daftar menu, menghapus daftar menu."""
+menampilkan daftar menu, menghapus daftar menu."""
 
 class Restaurant:
     def __init__(self,menu):
