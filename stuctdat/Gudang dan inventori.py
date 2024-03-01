@@ -19,7 +19,6 @@ class Gudzz:
     def __init__(self, barang):
         self.barang = barang
         
-
     def tambah_barang(self):
         self.tambah = str(input("masukkan nama barang : "))
         
@@ -40,72 +39,82 @@ class Gudzz:
         if again == "y":
             x.tambah_barang()
         elif again == "n":
+            print()
             x.opsi()
         else:
-            print("pilihan anda \"", again, "\" aneh")
+            print("pilihan anda \"", again, "\" tidak tersedia")
+            x.opsi()
 
     def hapus_barang(self):
         if len(self.barang) == 1:
             self.disp = list(self.barang)[0]
         if len(self.barang) >= 2:
             self.disp = list(self.barang)[-1]
+        if len(self.barang) != 0:
+            
+            
+            hapus = int(input(f"\n1. hapus semua barang \n2. edit barang terakhir ({self.disp}) \n3. pilih manual \n4. Batal\nsilahkan pilih opsi 1-4 dari atas  : "))
+            if hapus == 1:
+                self.barang.clear()
+                print()
+                x.opsi()
 
-        if len(self.barang) == 0:
+            elif hapus == 2:
+                print()
+                hapus2 = int(input("\n1. hapus semua \n2. edit manual \n1/2? "))
+                if hapus2 == 1: 
+                    del self.barang[self.disp]
+                    print(f"berhasil menghapus seluruh {self.disp}")
+                    x.opsi()
+                elif hapus2 == 2:
+                    print()
+                    hasil_hapus2 = int(input(f"berapa ({self.disp}) yang ingin dikurangi, sekarang ada {self.barang[self.disp]} : "))
+                    if hasil_hapus2 >=  self.barang[self.disp]:
+                        del self.barang[self.disp]
+                        print(f"berhasil menghapus seluruh item {self.disp}")
+                        x.opsi()
+                    else:
+                        hasil_hapus3 = self.barang[self.disp] - hasil_hapus2
+                        self.barang[self.disp] = hasil_hapus3
+                        print(f"berhasil mengurangi {self.disp} dari {self.barang[self.disp] + hasil_hapus2} ke {self.barang[self.disp]} ")
+                        x.opsi()
+                else:
+                    print(f"pilihan {hapus2} tidak tersedia")
+                    x.opsi()
+
+            elif hapus == 3:
+                print()
+                for key, value in self.barang.items():
+                    print(key, ":", value)
+                
+                manual = str(input("barang mana yang mau di edit? "))
+                if manual in self.barang:
+                    edit = int(input(f"berapa banyak unit {manual} yang ingin dikurangi, sekarang ada {self.barang[manual]} : "))
+                    if edit >= self.barang[manual]:
+                        del self.barang[manual]
+                        print(f"berhasil menghapus seluruh item {manual}")
+                    else:
+                        self.barang[manual] = self.barang[manual] - edit
+                        print(f"{manual} berhasil dikurangi menjadi {self.barang[manual]}")
+                else:
+                    print("barang yang dicari tidak ditemukan \nNote: nama barang harus case sensitive")
+                x.opsi()
+            
+            elif hapus == 4:
+                print()
+                print("kembalikan ke menu pilihan")
+                x.opsi()
+        elif len(self.barang) == 0:
             print("\nisi gudang sudah kosong dan tidak ada lagi yang bisa dihapus")
             x.opsi()
-        
-        hapus = int(input(f"\n1. hapus semua barang \n2. edit barang terakhir ({self.disp}) \n3. pilih manual \n4. Batal\nsilahkan pilih opsi 1-4 dari atas  : "))
-        if hapus == 1:
-            self.barang.clear()
+        else:
             print()
-            x.opsi()
-        if hapus == 2:
-            print()
-            hapus2 = int(input("\n1. hapus semua \n2. edit manual \n1/2? "))
-            if hapus2 == 1: 
-                del self.barang[self.disp]
-                print()
-                x.opsi()
-            elif hapus2 == 2:
-                print()
-                hasil_hapus2 = int(input(f"berapa ({self.disp}) yang ingin dikurangi, sekarang ada {self.barang[self.disp]} : "))
-                if hasil_hapus2 >=  self.barang[self.disp]:
-                    del self.barang[self.disp]
-                    print(f"berhasil menghapus seluruh item {self.disp}")
-                else:
-                    hasil_hapus3 = self.barang[self.disp] - hasil_hapus2
-                    self.barang[self.disp] = hasil_hapus3
-                    print(f"berhasil mengurangi {self.disp} dari {self.barang[self.disp] + hasil_hapus2} ke {self.barang[self.disp]} ")
-                
-                x.opsi()
-
-        if hapus == 3:
-            print()
-            for key, value in self.barang.items():
-                print(key, ":", value)
-            
-            manual = str(input("barang mana yang mau di edit? "))
-            if manual in self.barang:
-                edit = int(input(f"berapa banyak unit {manual} yang ingin dikurangi, sekarang ada {self.barang[manual]} : "))
-                if edit >= self.barang[manual]:
-                    del self.barang[manual]
-                    print(f"berhasil menghapus seluruh item {manual}")
-                else:
-                    self.barang[manual] = self.barang[manual] - edit
-                    print(f"{manual} berhasil dikurangi menjadi {self.barang[manual]}")
-            else:
-                print("barang yang dicari tidak ditemukan \nNote: nama barang harus case sensitive")
-            x.opsi()
-        
-        if hapus == 4:
-            print()
-            print("kembalikan ke menu pilihan")
-            x.opsi()
+            print(f"pilihan anda {hapus} tidak tersedia")
 
     def lihat_barang(self):
         print()
         if len(self.barang) == 0:
-            print("\nisi gudang sudah kosong dan tidak ada lagi yang bisa dihapus")
+            print("\nisi gudang sudah kosong")
         for key, value in self.barang.items():
             print(key, ":", value)
         print()
