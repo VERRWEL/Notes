@@ -59,6 +59,7 @@ class Gudzz:
             print()
             x.opsi()
         if hapus == 2:
+            print()
             hapus2 = int(input("\n1. hapus semua \n2. edit manual \n1/2? "))
             if hapus2 == 1: 
                 del self.barang[self.disp]
@@ -67,7 +68,7 @@ class Gudzz:
             elif hapus2 == 2:
                 print()
                 hasil_hapus2 = int(input(f"berapa ({self.disp}) yang ingin dikurangi, sekarang ada {self.barang[self.disp]} : "))
-                if hasil_hapus2 > self.barang[self.disp]:
+                if hasil_hapus2 >=  self.barang[self.disp]:
                     del self.barang[self.disp]
                     print(f"berhasil menghapus seluruh item {self.disp}")
                 else:
