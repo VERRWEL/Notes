@@ -33,6 +33,3 @@ for i in x:
 
 carinama = str(input("\nmasukan nama yang ingin dicari : ")) 
 search(carinama)
-
-
-
