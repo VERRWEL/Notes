@@ -8,7 +8,6 @@ students = [
 
 def ascending_sort(data,find):
   length = len(data)
-
   for i in range(length - 1):
     for j in range(0, length - i - 1):
       if data[j][find] > data[j+1][find]:
