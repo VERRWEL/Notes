@@ -1,4 +1,6 @@
 # SOAL 1 ALGORITMA LANJUT
+# Varel Gabriel Wungow
+# 32230062
 
 students = [
             {"NAMA": "richard", "ALPRO": "90", "DISKRIT": "91"},
