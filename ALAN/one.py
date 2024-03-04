@@ -1,19 +1,13 @@
-# 27 Feb 2024
+# BINARY SEARCH
+import random
 
-def havefun(n):
-  if n == 0:
-    return 0
-  else:
-    print("output = ", n)
-return havefun(n-1)
+arr = []
 
-havefun(10)
-
-def nontail(x):
-  if(x == 0):
-    return 0
-  nontail(x-1)
-  print("output = ", x)
-
-nontail(10)
-  
+while True:
+    ran = random.randint(1,9)
+    if ran not in arr:
+        arr.append(ran)
+    if len(arr) == 10:
+        break
+    
+print(arr)
