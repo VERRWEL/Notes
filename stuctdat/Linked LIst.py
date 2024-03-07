@@ -8,7 +8,7 @@ class LinkedList:
     def __init__(self):
         self.head = None
     
-    def add1st(self):           #Fungsi menambahkan elemen di linkedlist
+    def add1st(self):           #Fungsi menambahkan elemen pertama di linkedlist
         simpul = Node()         #var simpul = fungsi Node() yang membuattnya memiliki constructor dari class Node()
         if self.head is None:
             self.head = simpul
@@ -16,19 +16,19 @@ class LinkedList:
         simpul.next = self.head
         self.head = simpul
     
-    def addend(self):
+    def addend(self):           #fungsi menambahkan elemen di akhir list dalam linked list
         simpul = Node()
-        #cek apakah list kosong
+        #cek apakah list kosong maka tambahkan elemen dalam list
         if self.head is None:
             self.head = simpul
             return
-        #jika list tidak kosong
+        #jika list tidak kosong maka posisikan elemen yang baru ditambahkan ke posisi akhir di linked list
         temp = self.head
         while temp.next:
             temp = temp.next
         temp.next = simpul
 
-    def print(self):            #fungsi unruk menampilkan isi dari linked list
+    def showlist(self):            #fungsi unruk menampilkan isi dari linked list
         temp = self.head
         while temp:
             print(temp.data, end=" --> ")
@@ -40,4 +40,4 @@ sll = LinkedList()
 sll.add1st()
 sll.add1st()
 sll.addend()
-sll.print()
+sll.showlist()
