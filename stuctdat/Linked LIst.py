@@ -16,10 +16,22 @@ class LinkedList:
         simpul.next = self.head
         self.head = simpul
     
+    def addend(self):
+        simpul = Node()
+        #cek apakah list kosong
+        if self.head is None:
+            self.head = simpul
+            return
+        #jika list tidak kosong
+        temp = self.head
+        while temp.next:
+            temp = temp.next
+        temp.next = simpul
+
     def print(self):            #fungsi unruk menampilkan isi dari linked list
         temp = self.head
         while temp:
-            print(temp.data, end="-->")
+            print(temp.data, end=" --> ")
             temp = temp.next
         print('Name\n')
 
@@ -27,4 +39,5 @@ class LinkedList:
 sll = LinkedList()
 sll.add1st()
 sll.add1st()
+sll.addend()
 sll.print()
