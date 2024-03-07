@@ -1,3 +1,22 @@
+"""
+class Node:
+    def __init__(self):
+        self.data = input("Data : ")
+        self.next = None
+
+class LinkedList:
+    def __init__(self):
+        self.head = None
+
+    def addlist(self):  #fungsi untuk menambahkan elemen di linkedlist
+        simpul = Node() #var simpul = fungsi node () yang membuatnya memiliki contruktor dari class Node()
+        if self.head is None:
+            self.head = simpul
+            return
+        simpul.next = self.head
+        self.head = simpul
+"""
+
 #membuat class Node untuk menyimpan nilai dan alamat dari elemen berikutnnya
 class Node:
     def __init__(self):
@@ -59,17 +78,21 @@ pilih = str(input("1/2/3? "))
 while True:
     if pilih == "1":
         sll.add1st()
+        sll.showlist()
         print("add1st\naddmid\naddend")
         pilih = str(input("1/2/3? "))
     elif pilih == "2":
         sll.addmid()
+        sll.showlist()
         print("add1st\naddmid\naddend")
         pilih = str(input("1/2/3? "))
     elif pilih == "3":
         sll.addend()
+        sll.showlist()
         print("add1st\naddmid\naddend")
         pilih = str(input("1/2/3? "))
     else:
+        sll.showlist()
         print("mengeluarkan program...")
-        bbbb
+        break
         
