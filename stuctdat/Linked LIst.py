@@ -15,7 +15,24 @@ class LinkedList:
             return
         simpul.next = self.head
         self.head = simpul
-    
+
+    def addmid(self):
+        posisi = int(input("Input posisi elemen: "))
+        simpul = Node()
+        #Jika list kosong maka tidak bisa menambahkan elemen di posisi tersebut
+        if self.head is None:
+            print("List masih kosong. tdak bisa menambahkan elemen di posisi tersebut.")
+            return
+        #Jika list tidak kosong maka tambahkan elemen di posisi yang diinginkan
+        x = 0 #var untuk menyimpan posisi elemen dalam list
+        temp = self.head
+        while(temp.next != None and x+1 != posisi):
+            temp = temp.next
+            x = x + 1
+            if x + 1 == posisi:
+                simpul.next = temp.next
+                temp.next = simpul
+
     def addend(self):           #fungsi menambahkan elemen di akhir list dalam linked list
         simpul = Node()
         #cek apakah list kosong maka tambahkan elemen dalam list
@@ -37,7 +54,22 @@ class LinkedList:
 
 #mengakses class single linked list dan menambahkan elemen ke dalam list
 sll = LinkedList()
-sll.add1st()
-sll.add1st()
-sll.addend()
-sll.showlist()
+print("add1st\naddmid\naddend")
+pilih = str(input("1/2/3? "))
+while True:
+    if pilih == "1":
+        sll.add1st()
+        print("add1st\naddmid\naddend")
+        pilih = str(input("1/2/3? "))
+    elif pilih == "2":
+        sll.addmid()
+        print("add1st\naddmid\naddend")
+        pilih = str(input("1/2/3? "))
+    elif pilih == "3":
+        sll.addend()
+        print("add1st\naddmid\naddend")
+        pilih = str(input("1/2/3? "))
+    else:
+        print("mengeluarkan program...")
+        bbbb
+        
