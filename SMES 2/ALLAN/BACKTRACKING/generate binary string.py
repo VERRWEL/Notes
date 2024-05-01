@@ -32,10 +32,10 @@ def detailed(n):
         yelow = Fore.YELLOW
         black = Fore.BLACK
         if i==n:
-            print(f"{green}array finished, printing below{reset}")
+            print(f"{green}array finished, printing below{reset} | {yelow}i = {i}")
             print_array(arr,n)
             return
-        print(f"{yelow}{i} = i")
+        
         arr[i] = 0
         print(f"{blue}array = {arr} | turned arr[{i}] to {0}{reset}")
         print(f"{red}runnung the first recur{reset}")
