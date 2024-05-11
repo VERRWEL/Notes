@@ -6,7 +6,7 @@ Bgrin = Back.GREEN + Fore.BLACK
 Black = Fore.BLACK
 res = Style.RESET_ALL
 
-def CardGenerate(cl): #method menghasilkan semua 42 kartu main secara otomatis
+def CardGenerate(cl): #method menghasilkan semua 52 kartu main secara otomatis
     default_symbols = ['D', 'C', 'H', 'S'] #list simbol limbol kartu yaitu Diamond, Clove, Hearten, dan Spaids
     l = 1
     for i in default_symbols:   
@@ -37,7 +37,7 @@ def ShowAllPlayerCards():
     print(len(p2)," : player two cards total")
     print(len(p3)," : player three cards total")
     print(len(p4)," : player four cards total")
-    print(len(cards_list)," : cards left to give")
+    print(len(cards_list)," : cards left on the dealer")
 
 def Play():
     pass
