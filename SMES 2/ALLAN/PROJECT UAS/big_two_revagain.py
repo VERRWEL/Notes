@@ -62,9 +62,11 @@ def Play():
     for turn in players:
         print()
         print(f"Player {players.index(turn)+1}")
+        #print(turn)
         for check in turn:
-            print(check)
-            
+            if (turn[check] == 1) or (turn[check] == 14) or (turn[check] == 27) or (turn[check] == 40):
+                print(check, turn[check])
+
 
 ### -MAIN PROGRAM- ###
 p1 = {}
