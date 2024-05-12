@@ -49,7 +49,7 @@ def ShowAllPlayerCards(): #method untuk menunjukkan semua kartu yang ada pada ma
     print(len(cards_list)," : cards left on the dealer")
     """
     
-def Play(): #method untuk memainkan game▮▮▮▬▬▬▬▬▬▬
+def Play(): #method untuk memainkan game 
     print()
     time.sleep(0.3)
     print(Back.WHITE + Fore.BLACK + "Game initiating..." + res)
@@ -71,7 +71,7 @@ def Play(): #method untuk memainkan game▮▮▮▬▬▬▬▬▬▬
                 temp = turn[check]
                 print(red + f"{check}" ,res)
 
-### -MAIN PROGRAM- ###
+### -MAIN ▬PROGRAM▬ ###
 p1 = {}
 p2 = {}
 p3 = {}
