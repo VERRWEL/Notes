@@ -48,9 +48,9 @@ def ShowAllPlayerCards():
     
 def Play():
     print()
-    time.sleep(1)
+    time.sleep(0.3)
     print(Back.WHITE + Fore.BLACK + "Game initiating..." + res)
-    time.sleep(1)
+    time.sleep(0.3)
     print("\nYou are player number one.")
     #srtd_hand = sorted(p1.items(), key=lambda x: x[1])
     print("Here is your hand:")
@@ -58,7 +58,13 @@ def Play():
         print(Fore.GREEN + f"{i}" + res)
 
     #putaran pertama | buang 3
-    
+    print()
+    for turn in players:
+        print()
+        print(f"Player {players.index(turn)+1}")
+        for check in turn:
+            print(check)
+            
 
 ### -MAIN PROGRAM- ###
 p1 = {}
