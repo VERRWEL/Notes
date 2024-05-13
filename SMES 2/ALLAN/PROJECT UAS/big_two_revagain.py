@@ -24,8 +24,8 @@ def CardGenerate(cl): #fungsi menghasilkan semua 52 kartu main secara otomatis
     return cl
 
 def ShowDealerCards(): #method untuk menunjukkan semua kartu yang ada
-    for i in cards_list:
-        print(f"{i} : {cards_list[i]}")
+    for cards in cards_list:
+        print(f"{cards} : {cards_list[cards]}")
 
 def GiveCard(): #method tuntuk membagikan kartu pada masing-masing pemain seacra acak
     choose_player = random.choice(list(players))
