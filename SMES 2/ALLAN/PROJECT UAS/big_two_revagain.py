@@ -16,16 +16,23 @@ def CardGenerate(cl): #fungsi menghasilkan semua 52 kartu main secara otomatis
         default_symbols = ['♦️', '♣️', '♥️', '♠️'] #list simbol limbol kartu (logo/Unicode)
     elif style == "2":
         default_symbols = ['D', 'C', 'H', 'S'] #list simbol limbol kartu (alfabet)
-    l = 1
-    for i in default_symbols:   
-        for j in range(1, 14):
-            cl[i+str(j)] = l
-            l = l + 1
+    else:
+        default_symbols = ['♦️', '♣️', '♥️', '♠️'] #list simbol limbol kartu (logo/Unicode)
+    #l = 1
+    
+    for symbol in default_symbols: 
+        for l in range(1,14):
+            for rank in range(3, 11):
+                cl[symbol+str(rank)] = l
+            for Hrank in ['J', 'Q', 'K', 'A', '2']:
+                cl[symbol+str(Hrank)] = l  
+        print(l)
     return cl
 
 def ShowDealerCards(): #method untuk menunjukkan semua kartu yang ada
     for cards in cards_list:
         print(f"{cards} : {cards_list[cards]}")
+    print()
 
 def GiveCard(): #method tuntuk membagikan kartu pada masing-masing pemain seacra acak
     choose_player = random.choice(list(players))
@@ -49,6 +56,8 @@ def ShowAllPlayerCards(): #method untuk menunjukkan semua kartu yang ada pada ma
     print(len(cards_list)," : cards left on the dealer")
     """
     
+    
+    
 def Play(): #method untuk memainkan game 
     print()
     time.sleep(0.3)
@@ -57,7 +66,7 @@ def Play(): #method untuk memainkan game
     print("\nYou are player number one.")
     print("Here is your hand:")
     for i in p1:
-        print(Fore.GREEN + f"{i}" + res)
+        print(Fore.GREEN + f"{i}" + res, end= " | ")
 
     #putaran pertama | buang 3
     print()
@@ -82,7 +91,7 @@ players = [p1, p2, p3, p4] #list yang menyimpan masing-masing dictionary p1, p2,
 
 cards_list = CardGenerate(cl)
 
-#ShowDealerCards()
+ShowDealerCards()
 while len(cards_list) != 0:
     #ShowDealerCards()
     #print()
