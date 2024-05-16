@@ -9,8 +9,7 @@ try:
     fmagenta = Fore.MAGENTA
     fyelow = Fore.YELLOW
     res = Style.RESET_ALL
-    bwhite = Back.WHITE
-    
+    bwhite = Back.WHITE 
 except:
     print("colorma not included")
     red = str("")
@@ -30,37 +29,34 @@ def CardGenerate(cl): #fungsi menghasilkan semua 52 kartu main secara otomatis
         default_symbols = {'D' : 0.1, 'C' : 0.2, 'H' : 0.3, 'S' : 0.4} #list simbol limbol kartu (alfabet)
     else:
         default_symbols = {'♦️' : 0.1, '♣️' : 0.2, '♥️' : 0.3, '♠️' : 0.4} #list simbol limbol kartu (logo/Unicode)
-    l = 1
-    
-    for symbol in default_symbols: 
-        for rank in range(3, 11):
-            cl[symbol+str(rank)] = l
-            l = l + 1
-        for Hrank in ['J', 'Q', 'K', 'A', '2']:
-            cl[symbol+str(Hrank)] = l  
-            l = l + 1
-    #print(l)
+
+    Hrank = {'J':11, 'Q':12, 'K':13, 'A':14, '2':15}
+    for symbol in default_symbols:
+        for i in range(3,11):
+            cl[symbol + str(i)] = i + default_symbols[symbol]
+        for j in Hrank:
+            cl[symbol + str(j)] = Hrank[j] + default_symbols[symbol]
     return cl
 
 def ShowDealerCards(): #method untuk menunjukkan semua kartu yang ada
     for cards in cards_list:
         print(f"{cards} : {cards_list[cards]}")
-    print()
+    print(len(cards_list))
 
 def GiveCard(): #method tuntuk membagikan kartu pada masing-masing pemain seacra acak
     choose_player = random.choice(list(players))
-    if len(list(choose_player)) == 13:
-        GiveCard()
-    else:
+    if len(list(choose_player)) != 13:
         choose_card = random.randint(0, len(cards_list))
         try:
             choose_player[list(cards_list)[choose_card]] = cards_list[list(cards_list)[choose_card]]
             cards_list.pop(list(cards_list)[choose_card])
         except:
-            print()
+            print("", end=" ")
+    else:
+        GiveCard()
 
 def ShowAllPlayerCards(): #method untuk menunjukkan semua kartu yang ada pada masing masing pemain
-    print(f"{fgreen}PLAYER 1 : {list(p1)} \n{fblue}PLAYER 2 : {list(p2)} \n{fmagenta}PLAYER 3 : {list(p3)} \n{fyelow}PLAYER 4 : {list(p4)}{res}")
+    print(f"\n{fgreen}PLAYER 1 : {list(p1)} \n{fblue}PLAYER 2 : {list(p2)} \n{fmagenta}PLAYER 3 : {list(p3)} \n{fyelow}PLAYER 4 : {list(p4)}{res}")
     """
     print(len(p1)," : player one cards total")
     print(len(p2)," : player two cards total")
@@ -68,6 +64,8 @@ def ShowAllPlayerCards(): #method untuk menunjukkan semua kartu yang ada pada ma
     print(len(p4)," : player four cards total")
     print(len(cards_list)," : cards left on the dealer")
     """
+    
+
     
 def Play(): #method untuk memainkan game 
     print()
@@ -85,9 +83,9 @@ def Play(): #method untuk memainkan game
         print()
         print(f"Player {players.index(turn)+1}")
         for check in turn:
-            if (turn[check] == 1) or (turn[check] == 14) or (turn[check] == 27):
+            if (turn[check] == 3.1) or (turn[check] == 3.2) or (turn[check] == 3.3):
                 print(check)
-            elif turn[check] == 40:
+            elif turn[check] == 3.4:
                 temp = turn[check]
                 print(red + f"{check}" ,res)
 
