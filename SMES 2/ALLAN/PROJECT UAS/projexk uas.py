@@ -25,11 +25,11 @@ except:
 def CardGenerate(cl): #fungsi menghasilkan semua 52 kartu main secara otomatis
     style = str(input("use Unicode or Alphabet for symbol? 1/2 : "))
     if style == "1": # memilih penggunaan output yang akan digunakan untuk simbol kartu
-        default_symbols = ['♦️', '♣️', '♥️', '♠️'] #list simbol limbol kartu (logo/Unicode)
+        default_symbols = {'♦️' : 0.1, '♣️' : 0.2, '♥️' : 0.3, '♠️' : 0.4} #list simbol limbol kartu (logo/Unicode)
     elif style == "2":
-        default_symbols = ['D', 'C', 'H', 'S'] #list simbol limbol kartu (alfabet)
+        default_symbols = {'D' : 0.1, 'C' : 0.2, 'H' : 0.3, 'S' : 0.4} #list simbol limbol kartu (alfabet)
     else:
-        default_symbols = ['♦️', '♣️', '♥️', '♠️'] #list simbol limbol kartu (logo/Unicode)
+        default_symbols = {'♦️' : 0.1, '♣️' : 0.2, '♥️' : 0.3, '♠️' : 0.4} #list simbol limbol kartu (logo/Unicode)
     l = 1
     
     for symbol in default_symbols: 
@@ -39,11 +39,7 @@ def CardGenerate(cl): #fungsi menghasilkan semua 52 kartu main secara otomatis
         for Hrank in ['J', 'Q', 'K', 'A', '2']:
             cl[symbol+str(Hrank)] = l  
             l = l + 1
-
-
-
-
-    print(l)
+    #print(l)
     return cl
 
 def ShowDealerCards(): #method untuk menunjukkan semua kartu yang ada
@@ -72,8 +68,6 @@ def ShowAllPlayerCards(): #method untuk menunjukkan semua kartu yang ada pada ma
     print(len(p4)," : player four cards total")
     print(len(cards_list)," : cards left on the dealer")
     """
-    
-    
     
 def Play(): #method untuk memainkan game 
     print()
