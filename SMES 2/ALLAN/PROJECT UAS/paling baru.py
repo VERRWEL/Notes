@@ -226,22 +226,21 @@ def RecursivePlay(turns, win, skip): #fungsi rekursif untuk memainkan game secar
         elif turns == 3:
             RecursivePlay(turns - 3, None, 0)
     
-    
 ### ▬MAIN PROGRAM▬ ###
 p1 = {}
 p2 = {}
 p3 = {}
 p4 = {}
-cl = {} #card-list
+cl = {} #temporary card-list place holder
 cards_on_the_table = {} #kartu yang telah dibuang dan sudah tidak dipegang oleh para pemain maupun dealer
 players = [p1, p2, p3, p4] #list yang menyimpan masing-masing dictionary p1, p2, p3, p4
 
 cards_list, style = CardGenerate(cl)
 
-#ShowDealerCards()---------------
+#ShowDealerCards()
 while len(cards_list) != 0:
-    #ShowDealerCards()-------------
-    #print()-----------------------
+    #ShowDealerCards()
+    #print()
     GiveCard()
 
 print(f"\n{bwhite}{Black}generated card : {res}")
@@ -249,10 +248,5 @@ ShowAllPlayerCards()
 who_plays_first = InitiatePlay(style)
 print()
 print(f"{'-' * 50}") #################################
-#ShowAllPlayerCards()
-#print(CheckThrownCards())------------------
-#CheckThrownCards()
-#print(cards_on_the_table)-----------------
-#print(f"\n\nthe one who plays first is : player[{who_plays_first}] as index of variable in array players. which is player {who_plays_first+1}")
 RecursivePlay(who_plays_first, None, 0)
 ShowAllPlayerCards()
