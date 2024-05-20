@@ -251,5 +251,3 @@ print()
 print(f"{'-' * 50}") #################################
 RecursivePlay(who_plays_first, None, 0)
 ShowAllPlayerCards()
-print()
-print(cards_on_the_table)
