@@ -163,7 +163,7 @@ def RecursivePlay(turns, win, skip): #fungsi rekursif untuk memainkan game secar
             print(f"\n{bwhite}your turn{res}")
             if max(list(p1.values())) < list(cards_on_the_table.values())[-1]:
                 print("\nyou skipped")
-                RecursivePlay(turns + 1,win, skip + 1)
+                RecursivePlay(turns + 1,None, skip + 1)
             else:
                 print("\nyour turn to play")
                 print("here is your hand : ")
@@ -219,7 +219,7 @@ def RecursivePlay(turns, win, skip): #fungsi rekursif untuk memainkan game secar
 
     if is_thrown_highcard:
         RecursivePlay(turns, None, 0)
-        
+
     else:                                           
         if turns != 3:
             RecursivePlay(turns + 1, None, 0)
