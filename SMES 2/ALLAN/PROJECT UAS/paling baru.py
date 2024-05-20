@@ -158,7 +158,7 @@ def RecursivePlay(turns, win, skip): #fungsi rekursif untuk memainkan game secar
         if turns == 0:
             print(f"\n{bwhite}your turn{res}")
             if max(list(p1.values())) < list(cards_on_the_table.values())[-1]:
-                print("\nyou skipped")
+                print(f"\n{bwhite}{Black} you skiped{res}")
                 RecursivePlay(turns + 1,None, skip + 1)
             else:
                 print("\nyour turn to play")
