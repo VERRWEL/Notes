@@ -148,7 +148,7 @@ def RecursivePlay(turns, win, skip): #fungsi rekursif untuk memainkan game secar
     else:
         print(f"\nskiped {skip} times")
         if skip == 3:
-            cards_on_the_table[list(cards_on_the_table.values)[-1]] == 0
+            cards_on_the_table[list(cards_on_the_table.keys())[-1]] = 0
             print(cards_on_the_table[list(cards_on_the_table.values)[-1]], "became free")
             skip = 0 
         
