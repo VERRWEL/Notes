@@ -211,17 +211,17 @@ def RecursivePlay(turns, win, skip): #fungsi rekursif untuk memainkan game secar
                     players[turns].pop(enemy_throw)
         
         if (len(p1) == 0) or (len(p2) == 0) or (len(p3) == 0) or (len(p4) == 0):
-            print(f"GAME FINISHED WITH {turns} AS THE WINER")
-            #RecursivePlay(turns, turns + 1, 0)
+            print(f"GAME FINISHED WITH {turns + 1} AS THE WINER")
+            return turns
+        else:
+            if is_thrown_highcard:
+                RecursivePlay(turns, None, 0)
 
-        if is_thrown_highcard:
-            RecursivePlay(turns, None, 0)
-
-        else:                                           
-            if turns != 3:
-                RecursivePlay(turns + 1, None, 0)
-            elif turns == 3:
-                RecursivePlay(turns - 3, None, 0)
+            else:                                           
+                if turns != 3:
+                    RecursivePlay(turns + 1, None, 0)
+                elif turns == 3:
+                    RecursivePlay(turns - 3, None, 0)
 
     else:
         print("wineerr ", win)
