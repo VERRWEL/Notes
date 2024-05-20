@@ -140,12 +140,8 @@ def CheckThrownCards(): #method untuk menunjukkan semua kartu yang telah dibuang
 def RecursivePlay(turns, win, skip): #fungsi rekursif untuk memainkan game secara berulang kali sampai ada pemenang
     time.sleep(2)
     CheckThrownCards() 
-    #ShowAllPlayerCards()
-    if win != None:
-        print("wineerr ", win)
-        return win
-
-    else:
+    #ShowAllPlayerCards()  
+    if win == None:
         print(f"\nskiped {skip} times")
         if skip == 3:
             cards_on_the_table[list(cards_on_the_table.keys())[-1]] = 0
@@ -213,18 +209,23 @@ def RecursivePlay(turns, win, skip): #fungsi rekursif untuk memainkan game secar
                     print(f"\n{bwhite}{Black}player {turns + 1} throws {enemy_throw}{res}")
                     cards_on_the_table[enemy_throw] = players[turns][enemy_throw]
                     players[turns].pop(enemy_throw)
-    
-    if (len(p1) == 0) or (len(p2) == 0) or (len(p3) == 0) or (len(p4) == 0):
-            RecursivePlay(turns, turns + 1, 0)
+        
+        if (len(p1) == 0) or (len(p2) == 0) or (len(p3) == 0) or (len(p4) == 0):
+            print(f"GAME FINISHED WITH {turns} AS THE WINER")
+            #RecursivePlay(turns, turns + 1, 0)
 
-    if is_thrown_highcard:
-        RecursivePlay(turns, None, 0)
+        if is_thrown_highcard:
+            RecursivePlay(turns, None, 0)
 
-    else:                                           
-        if turns != 3:
-            RecursivePlay(turns + 1, None, 0)
-        elif turns == 3:
-            RecursivePlay(turns - 3, None, 0)
+        else:                                           
+            if turns != 3:
+                RecursivePlay(turns + 1, None, 0)
+            elif turns == 3:
+                RecursivePlay(turns - 3, None, 0)
+
+    else:
+        print("wineerr ", win)
+        return win
     
 ### ▬MAIN PROGRAM▬ ###
 p1 = {}
@@ -250,3 +251,5 @@ print()
 print(f"{'-' * 50}") #################################
 RecursivePlay(who_plays_first, None, 0)
 ShowAllPlayerCards()
+print()
+print(cards_on_the_table)
