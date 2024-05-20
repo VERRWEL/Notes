@@ -149,7 +149,7 @@ def RecursivePlay(turns, win, skip): #fungsi rekursif untuk memainkan game secar
         print(f"\nskiped {skip} times")
         if skip == 3:
             cards_on_the_table[list(cards_on_the_table.keys())[-1]] = 0
-            print(cards_on_the_table[list(cards_on_the_table.values)[-1]], "became free")
+            print(list(cards_on_the_table.keys())[-1], "became free")
             skip = 0 
         
         current_highest_card = max(list(p1.values()) + list(p2.values()) + list(p3.values()) + list(p4.values()))
