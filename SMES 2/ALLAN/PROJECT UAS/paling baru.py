@@ -165,14 +165,17 @@ def RecursivePlay(turns, win, skip): #fungsi rekursif untuk memainkan game secar
                 print("here is your hand : ")
                 for i in p1:
                     print(fgreen + f"{i}" + res, end= " | ")
-                throw = str(input(f"what card do you want to throw : {fgreen}"))
+                #throw = str(input(f"what card do you want to throw : {fgreen}"))
+                throw = random.choice(list(p1.keys()))
                 print(res)
                 while throw not in list(p1.keys()):
                     print("card unavailable")
-                    throw = str(input("please input again : "))
+                    #throw = str(input("please input again : "))
+                    throw = random.choice(list(p1.keys()))
                 while (p1[throw] < list(cards_on_the_table.values())[-1]):
                     print(f"\n{throw} card is too low")
-                    throw = str(input("please input again: "))
+                    #throw = str(input("please input again: "))
+                    throw = random.choice(list(p1.keys()))
                 
                 if p1[throw] == current_highest_card:
                     is_thrown_highcard = True
@@ -222,10 +225,11 @@ def RecursivePlay(turns, win, skip): #fungsi rekursif untuk memainkan game secar
                     RecursivePlay(turns + 1, None, 0)
                 elif turns == 3:
                     RecursivePlay(turns - 3, None, 0)
-
+    """
     else:
         print("wineerr ", win)
         return win
+    """
     
 ### ▬MAIN PROGRAM▬ ###
 p1 = {}
