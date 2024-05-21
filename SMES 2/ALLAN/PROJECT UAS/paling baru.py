@@ -138,10 +138,11 @@ def CheckThrownCards(): #method untuk menunjukkan semua kartu yang telah dibuang
         print(f"{i}", end= " | ")
 
 def RecursivePlay(turns, win, skip): #fungsi rekursif untuk memainkan game secara berulang kali sampai ada pemenang
-    time.sleep(2)
+
     CheckThrownCards() 
     #ShowAllPlayerCards()  
     if win == None:
+        
         print(f"\nskiped {skip} times")
         if skip == 3:
             cards_on_the_table[list(cards_on_the_table.keys())[-1]] = 0
@@ -156,12 +157,14 @@ def RecursivePlay(turns, win, skip): #fungsi rekursif untuk memainkan game secar
                     ky = keys
         print("highest card",current_highest_card, "or", ky)
         if turns == 0:
+            
             print(f"\n{bwhite}your turn{res}")
             if max(list(p1.values())) < list(cards_on_the_table.values())[-1]:
                 print(f"\n{bwhite}{Black} you skiped{res}")
                 RecursivePlay(turns + 1,None, skip + 1)
             else:
                 print("\nyour turn to play")
+                time.sleep(2)
                 print("here is your hand : ")
                 for i in p1:
                     print(fgreen + f"{i}" + res, end= " | ")
@@ -188,7 +191,9 @@ def RecursivePlay(turns, win, skip): #fungsi rekursif untuk memainkan game secar
                     p1.pop(throw)
      
         elif(turns == 1) or (turns == 2) or (turns == 3):
+            
             print(f"\n{bwhite}player {turns + 1}'s turn{res}")
+            time.sleep(0.5)
             if max(list(players[turns].values())) < list(cards_on_the_table.values())[-1]:
                 print(f"\n{bwhite}{Black} player {turns + 1} skiped{res}")
                 if turns != 3:
@@ -214,7 +219,7 @@ def RecursivePlay(turns, win, skip): #fungsi rekursif untuk memainkan game secar
                     players[turns].pop(enemy_throw)
         
         if (len(p1) == 0) or (len(p2) == 0) or (len(p3) == 0) or (len(p4) == 0):
-            print(f"GAME FINISHED WITH {turns + 1} AS THE WINER")
+            #print(f"GAME FINISHED WITH {turns + 1} AS THE WINER")
             return turns
         else:
             if is_thrown_highcard:
