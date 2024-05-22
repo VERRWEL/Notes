@@ -144,7 +144,7 @@ def CheckThrownCards(): #method untuk menunjukkan semua kartu yang telah dibuang
 def RecursivePlay(turns, win, skip): #fungsi rekursif untuk memainkan game secara berulang kali sampai ada pemenang
 
     CheckThrownCards() 
-    ShowAllPlayerCards()  
+    #ShowAllPlayerCards()  
     print(f"\nskiped {skip} times")
     if skip == 3:
         cards_on_the_table[list(cards_on_the_table.keys())[-1]] = 0
@@ -232,7 +232,8 @@ def RecursivePlay(turns, win, skip): #fungsi rekursif untuk memainkan game secar
         cards_on_the_table[put] = p2[put]
         print(f"{bwhite}{Black}player 2 throws {put}{res}")
         p2.pop(put)
-        
+        time.sleep(1)
+
     elif (turns == 2) or (turns == 3):
         print(f"\n{bwhite}player {turns + 1}'s turn{res}")
         
