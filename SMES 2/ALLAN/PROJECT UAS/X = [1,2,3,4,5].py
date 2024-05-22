@@ -1,1 +1,41 @@
-a  = {'♣️3': 3.2, '♥️3': 3.3, '♦️3': 3.1, '♠️3': 3.4, '♠️4': 4.4, '♠️K': 13.4, '♣️2': 15.2, '♥️2': 0, '♣️5': 5.2, '♠️8': 8.4, '♠️A': 14.4, '♦️2': 0, '♠️J': 11.4, '♦️Q': 12.1, '♥️Q': 12.3, '♠️Q': 12.4, '♠️2': 0, '♣️9': 9.2, '♥️A': 0, '♦️6': 6.1, '♠️6': 6.4, '♦️7': 7.1, '♥️10': 10.3, '♦️A': 14.1, '♣️A': 0, '♦️5': 5.1, '♦️10': 10.1, '♥️J': 11.3, '♥️K': 0, '♥️4': 4.3, '♥️7': 7.3, '♠️9': 9.4, '♣️J': 11.2, '♣️Q': 0, '♦️9': 9.1, '♣️10': 10.2, '♦️J': 11.1, '♦️K': 0, '♣️K': 0, '♥️9': 9.3}
+n, t = None, None
+while n is None or t is None:
+    input_str = input("masukan potongan pizza ke berapa dan banyaknya potongan: ")
+    try:
+        n,t = map(int, input_str.split())
+    except ValueError:
+        print("Invalid input. Please enter two integers separated by a space.")
+        
+pizza = [0] * (n + 1)
+
+for i in range(1,n + 1):
+    orang_pertama = set(map(int, input("masukan banyak potongan dimakan: ").split()))
+    slices_liked1 = set(map(int, input(f"potongan favorite orang pertama: ").split()))
+
+orang_kedua = int(input("masukan banyak potongan yang dimakan orang kedua : "))
+slices_liked2 = set(map(int, input(f"potongan favorite orang kedua: ").split()))
+
+for me in orang_pertama:
+    while me <= n and pizza[me] > 0:
+        print(f"Slice #{me} is eaten by Aku")
+        pizza[me] -= 1
+        
+for me in slices_liked2:
+    while me <= n and pizza[me] > 0:
+        print(f"{slices_liked2} akan dimakan oleh orang kedua")
+        pizza[me] -= 1
+
+if t <= n:
+    print(f"Sisa potongan akan dimakan orang ketiga")
+    pizza[t] -= 1
+
+
+total_slices_eaten = t
+
+if total_slices_eaten == 0:
+    print("Only one slice was eaten in total.")
+else:
+    print(f"Aku makan {orang_pertama} slices.")
+    print(f"orang kedua makan {orang_kedua} slices.")
+    print(f"orang ketiga {total_slices_eaten - len(orang_pertama) - orang_kedua - 1} slice.")
+    print("End of simulation")
