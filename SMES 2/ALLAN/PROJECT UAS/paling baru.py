@@ -79,9 +79,9 @@ def InitiatePlay(sty): #fungsi untuk memainkan game
     time.sleep(0.3)
     print("\nYou are player number one.")
     print("Here is your hand:")
+    
     for i in p1:
         print(fgreen + f"{i}" + res, end= " | ")
-
     #putaran pertama | buang 3
     print()
     for turn in players:
@@ -96,8 +96,6 @@ def InitiatePlay(sty): #fungsi untuk memainkan game
                 firstnm = players.index(turn)
                 cards_on_the_table[check] = turn[check]
                 print(red + f"{check}" ,res)
-    
-    
     def recur_del_threes(iteration,style):
         if iteration != 4:
             for y in range(1,5):
@@ -118,7 +116,6 @@ def InitiatePlay(sty): #fungsi untuk memainkan game
                             players[iteration].pop(ith)
             recur_del_threes(iteration + 1, style)
     recur_del_threes(0,sty)
-
     temp = {}
     if style == "1":
         temp['♠️3'] = max(cards_on_the_table.values())
@@ -132,9 +129,7 @@ def InitiatePlay(sty): #fungsi untuk memainkan game
         temp['♠️3'] = max(cards_on_the_table.values())
         cards_on_the_table.pop('♠️3')
         cards_on_the_table['♠️3'] = max(temp.values())
-    
     print(f"player {firstnm + 1} will be playing first")
-
     return firstnm
 
 def CheckThrownCards(): #method untuk menunjukkan semua kartu yang telah dibuang oleh pemain-pemain
@@ -143,26 +138,24 @@ def CheckThrownCards(): #method untuk menunjukkan semua kartu yang telah dibuang
         print(f"{i}", end= " | ")
 
 def RecursivePlay(turns, win, skip): #fungsi rekursif untuk memainkan game secara berulang kali sampai ada pemenang
-
     CheckThrownCards() 
     #ShowAllPlayerCards()  
     print(f"\nskiped {skip} times")
+
     if skip == 3:
         cards_on_the_table[list(cards_on_the_table.keys())[-1]] = 0
         print(f"{Bblue}{list(cards_on_the_table.keys())[-1]} became free{res}")
         skip = 0 
-    
     current_highest_card = max(list(p1.values()) + list(p2.values()) + list(p3.values()) + list(p4.values()))
     is_thrown_highcard = False
     for plyr in players:
         for keys in plyr:
             if plyr[keys] == current_highest_card:  
                 ky = keys
-    #print("highest card",current_highest_card, "or", ky)
 
-    if turns == 0:
+    #print("highest card",current_highest_card, "or", ky)
+    if turns == 0:  #PLAYER 1
         print(f"\n{bwhite}your turn{res}")
-        
         if max(list(p1.values())) < list(cards_on_the_table.values())[-1]:
             print(f"\n{bwhite}{Black} you skiped{res}")
             RecursivePlay(turns + 1,False, skip + 1)
@@ -193,9 +186,9 @@ def RecursivePlay(turns, win, skip): #fungsi rekursif untuk memainkan game secar
                 print(f"{bwhite}{Black}player {turns + 1} throws {throw}{res}")
                 cards_on_the_table[throw] = p1[throw]
                 p1.pop(throw)
-        time.sleep(0.1)
+        #time.sleep(0.1)
     
-    elif turns == 1:
+    elif turns == 1: #PLAYER 2
         print(f"{bwhite}player 2's turn{res}\n")
 
         if max(list(p2.values())) < list(cards_on_the_table.values())[-1]:
@@ -235,7 +228,7 @@ def RecursivePlay(turns, win, skip): #fungsi rekursif untuk memainkan game secar
         p2.pop(put)
         time.sleep(0.1)
 
-    elif (turns == 2) or (turns == 3):
+    elif (turns == 2) or (turns == 3): #PLAYER 3 AND 4
         print(f"\n{bwhite}player {turns + 1}'s turn{res}")
         
         if max(list(players[turns].values())) < list(cards_on_the_table.values())[-1]:
@@ -262,7 +255,7 @@ def RecursivePlay(turns, win, skip): #fungsi rekursif untuk memainkan game secar
                 print(f"\n{bwhite}{Black}player {turns + 1} throws {enemy_throw}{res}")
                 cards_on_the_table[enemy_throw] = players[turns][enemy_throw]
                 players[turns].pop(enemy_throw)
-        time.sleep(0.1)
+        #time.sleep(0.1)
 
     if len(players[turns]) == 0:
         print(f"\nGAME ENDED WITH PLAYER {turns + 1} AS THE WINER")

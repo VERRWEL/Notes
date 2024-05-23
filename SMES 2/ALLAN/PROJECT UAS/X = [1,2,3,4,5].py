@@ -1,13 +1,17 @@
-abc = {
-    'a' : 1,
-    'b' : 2,
-    'c' : 3,
-    'djajdaj' : 72626
-}
+"""
+Latitude    = —
+Longitude   = |
 
+latitude centre     = Prime meridian
+longitude centre    = equator
 
-x = {}
+Springwood Latitude     = -6.224949179917804 below equator
+Springwood Longitude    = 106.63783546962495 over Prime meridian
+"""
 
-x['a'] = abc['a']
+import math
 
-print(x)
+latitude = float(input("masukkan latitude : "))
+longitude = float(input("masukkan longitude :  "))
+
+print(f"latitude : {latitude}\nlongitude : {longitude}")
