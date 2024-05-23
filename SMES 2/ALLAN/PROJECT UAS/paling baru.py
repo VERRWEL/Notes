@@ -15,6 +15,7 @@ try:
     Bblue = Back.BLUE
 except:
     print("colorma not included")
+    print("output will not be colored")
     time.sleep(3)
     red = str("")
     fgreen = str("")
@@ -192,7 +193,7 @@ def RecursivePlay(turns, win, skip): #fungsi rekursif untuk memainkan game secar
                 print(f"{bwhite}{Black}player {turns + 1} throws {throw}{res}")
                 cards_on_the_table[throw] = p1[throw]
                 p1.pop(throw)
-        time.sleep(2)
+        time.sleep(0.1)
     
     elif turns == 1:
         print(f"{bwhite}player 2's turn{res}\n")
@@ -232,7 +233,7 @@ def RecursivePlay(turns, win, skip): #fungsi rekursif untuk memainkan game secar
         cards_on_the_table[put] = p2[put]
         print(f"{bwhite}{Black}player 2 throws {put}{res}")
         p2.pop(put)
-        time.sleep(1)
+        time.sleep(0.1)
 
     elif (turns == 2) or (turns == 3):
         print(f"\n{bwhite}player {turns + 1}'s turn{res}")
@@ -250,7 +251,6 @@ def RecursivePlay(turns, win, skip): #fungsi rekursif untuk memainkan game secar
         else:
             enemy_throw = random.choice(list(players[turns].keys()))
             while (players[turns][enemy_throw] < list(cards_on_the_table.values())[-1]):
-                #print(f"\n{enemy_throw} card is not available")
                 enemy_throw = random.choice(list(players[turns].keys()))
 
             if players[turns][enemy_throw] == current_highest_card:
@@ -262,7 +262,7 @@ def RecursivePlay(turns, win, skip): #fungsi rekursif untuk memainkan game secar
                 print(f"\n{bwhite}{Black}player {turns + 1} throws {enemy_throw}{res}")
                 cards_on_the_table[enemy_throw] = players[turns][enemy_throw]
                 players[turns].pop(enemy_throw)
-        time.sleep(1)
+        time.sleep(0.1)
 
     if len(players[turns]) == 0:
         print(f"\nGAME ENDED WITH PLAYER {turns + 1} AS THE WINER")
