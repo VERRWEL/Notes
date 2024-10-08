@@ -1,0 +1,13 @@
+NOTES UNTUK FOLDER, KODINGAN IMPLEMENTASI CAPSA KE PYHON, DAN TENTANG KELOMPOK
+
+kami kelompok 5 dengan member:
+Varel Gabriel Wungow NIM: 32230062 (ketua)
+Nathan Raffael Simatupang NIM: 32230078
+ 
+dalam folder terdapat dua file python, bernama TESTING capsa.py dan PLAY capsa.py
+
+TESTING capsa.py adalah file pyhon yang membuat player 1 bukanlah dimainkan dan diambil ahli oleh user, melainkan player 1 menjadi sama seprti player 3 dan 4 dimana cara dia memilih kartu adalah dengan memimilih secara acak. dengan kata lain, player 1 diotomasi demi testing output
+
+PLAY capsa.py adalah file python yang dimana user dapat ikut main dan menjadi player 1 dan ketika giliran player 1 untuk membuang kartu, kartu yang akan dibuang akan disesuaikan dengan inputan user.
+
+saat menjalankan program python, maka user pertama-tama akan diminta input apakah mau menggunakan logo atau hanya huruf sebagai logo kartu (1/2) pilihan ini hanya akan berdampak pada penampilan kartu dan selain dari itu, tidak ada dampak lain ke aturan main. 

@@ -1,0 +1,10 @@
+logging initialized
+ executing file : 
+c:\Users\USER\Documents\Notes\SMES 2\ALLAN\PROJECT UAS K5\DONE\UASTIB27_2PTI52_32230062\UASTIB27_2PTI52_32230062_32230078(2).py
+ on : 2024-09-18 20:49:45.198245
+
+running CardGenerate() function
+using style option 1 (Unicode)
+logging discontinued because unicode is unsupported in text files
+
+running GiveCard() function
