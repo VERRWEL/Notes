@@ -33,8 +33,13 @@ for temp in list(dik.keys()):
 print(now)
 """
 
+"""
 tmp = []
 for i in list(dik.keys()):
     tmp.append(dik[i][1])
 
 print(sum(tmp))
+"""
+
+x = -5
+print(abs(x))
