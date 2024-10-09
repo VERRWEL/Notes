@@ -1,18 +1,5 @@
-process = {
-    'P1' : [0,7],
-    'P2' : [2,4],
-    'P3' : [4,1],
-    'P4' : [5,4]
-}
-
-arrived_proc = {}
 
 #SJF
-
-tmp_cap = []
-for cap_BT in list(process.keys()):
-    tmp_cap.append(process[cap_BT][1])
-cap = sum(tmp_cap)
 
 def recursive(time, arrived_proc, process): 
 
@@ -63,5 +50,20 @@ def recursive(time, arrived_proc, process):
         recursive(time, arrived_proc, process)
         return
 
+process = {
+    'P1' : [0,7],
+    'P2' : [2,4],
+    'P3' : [4,1],
+    'P4' : [5,4]
+}
+
+tmp_cap = []
+for cap_BT in list(process.keys()):
+    tmp_cap.append(process[cap_BT][1])
+cap = sum(tmp_cap)
+
+
+arrived_proc = {}
+finished_proc = {}
 time = 0
 recursive(time, arrived_proc,process)
