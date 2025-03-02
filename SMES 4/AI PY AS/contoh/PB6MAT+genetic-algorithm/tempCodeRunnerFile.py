@@ -1,1 +1,1 @@
-https://www.geeksforgeeks.org/genetic-algorithms/
+    print(z)

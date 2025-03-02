@@ -1,5 +1,5 @@
 VARIABLES:
-    POPULATION_SIZE ->  
+    POPULATION_SIZE ->  how many individuals to be considered
     Genes           ->  string of all characters to be used
     Target          ->  the target string/sucessful-generation
                         to create 
@@ -10,10 +10,10 @@ FUNCTIONS:
     create_genome   ->  calling the "mutated_genes" function for n amount 
                         of times where n is the length of the 'Target' 
                         string variable.
-    mate            -> 
+    mate            -> 	___
 
 STEPS OF EXECUTION:
-    1.  CREATE INITIAL GENERATION↴
+    1.  CREATE INITIAL GENERATION
             crating 100(POPULATION_SIZE) amount of chromosome
             where each chromosome/individual contains 22(len(TARGET))
             genomes randomly picked from the 'GENES' string variable
@@ -37,8 +37,15 @@ NOTES:
         chromosome(one population)  : 'Ay2O9lc-:r4:ozq1eAY2-q' 
         five population             : # basically 5 chromosomes
         target chromosome           : 'Artivicial intelegence'
+		
+	-	MAKING FITNESS CALCULATION FUNCTION:
+			break each char in the 'TARGET' variable from a string to an array of char
+	
+			for every individual in the population, check and match every gnome/char to the corresponding gnome/char in the 'TARGET' variable.
+			if a char matches each other (population-individual -> 'TARGET') then fitness score + 1, if not, then fitness score stays
 
 TO-DO DRAFT:
     -   can string be counted like an array? 
         make a string variable, and do a len() function to it.
+		YES, it can
 

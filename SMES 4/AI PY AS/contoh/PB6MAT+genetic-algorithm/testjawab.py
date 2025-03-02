@@ -1,24 +1,40 @@
 import random
 
-GENES = '''abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOP QRSTUVWXYZ 1234567890, .-;:_!"#%&/()=?@${[]}+'''
+GENES = ''' abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890,.-;:_!"#%&/()=?@${[]}+'''
 POPULATION_SIZE = 100
 TARGET = 'Matkul Bamngke'
 
 #make initial population
 
 def MakeGenome():
-    x = []
+    single_rand_gene = []
     for i in range(len(TARGET)):
-        x.append(random.choice(GENES))
-    return x
+        single_rand_gene.append(random.choice(GENES))
+    return single_rand_gene
 
 
 def MakeIndividual():
-    y = []
+    single_generated_individual = []
     for i in range(POPULATION_SIZE):
-        y.append(MakeGenome())
-    return y
+        single_generated_individual.append(MakeGenome())
+    return single_generated_individual
 
-for i in MakeIndividual():
-    print(i)
-print(f"total individual/chromosome : {len(MakeIndividual())}")
+def JoinChar():
+    list_joined_indiv = []
+    for gene in MakeIndividual():
+        single_joined_indiv = ''.join(gene)
+        list_joined_indiv.append(single_joined_indiv)
+
+    for indiv in list_joined_indiv:
+        print(indiv)
+
+#memisahkan masing-masing char dalam variabel 'TARGET' menjadi list
+def SplitTARGET():
+    list_split_target = []
+    for char in TARGET:
+        list_split_target.append(char)
+    return list_split_target
+
+
+def CalculateFitness():
+    compare = SplitTARGET()
