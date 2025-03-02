@@ -153,4 +153,5 @@ if __name__ == '__main__':
     main()
     #print(Individual.create_gnome()) 
 
-#source: https://www.geeksforgeeks.org/genetic-algorithms/
+#source: 
+# https://www.geeksforgeeks.org/genetic-algorithms/

@@ -38,3 +38,4 @@ def SplitTARGET():
 
 def CalculateFitness():
     compare = SplitTARGET()
+    
